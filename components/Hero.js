@@ -20,7 +20,7 @@ const Hero = () => {
 
   return (
     <div
-      className="relative w-full top-0 bg-white-300 mt-20 z-1 px-8 xl:px-16 mx-auto h-[500px]"
+      className="relative w-full top-0 bg-white-300 mt-20 z-1 px-8 xl:px-16 mx-auto h-[500px] md:h-[700px] lg:h-[900px]"
       id="home"
     >
       <Image
@@ -28,6 +28,7 @@ const Hero = () => {
         alt="Hero Background"
         layout="fill"
         objectFit="cover"
+        objectPosition="center"
       />
 
       <div className="absolute top-0 left-0 right-0 bottom-0 flex flex-col justify-center items-center">
@@ -36,13 +37,13 @@ const Hero = () => {
             className="grid grid-flow-row sm:grid-flow-col grid-rows-2 md:grid-rows-1 sm:grid-cols-2 gap-8 py-6 sm:py-16"
             variants={scrollAnimation}
           >
-            <div className=" flex flex-col justify-center col-start-1 col-end-2 items-center row-start-2 sm:row-start-1">
-              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-medium text-black-600 leading-normal">
-                Hello love, I am <strong>Kaity</strong>.
+            <div className=" flex flex-col justify-center col-start-1 col-end-2 row-start-2 sm:row-start-1">
+              <h1 className="text-3xl lg:text-4xl xl:text-5xl font-Lora font-bold text-white-500 leading-normal">
+                Hola, I am <strong>Kaity</strong>.
               </h1>
-              <p className="text-black-500 ml-24 mt-4 mb-6">
+              <p className="text-white-500 mt-4 mb-6">
                 Find balance in your peronsal and spiritual life. Learn to
-                communicate with your authentic voice intuitively.
+                communicate<br></br> with your authentic voice intuitively.
               </p>
               <LinkScroll
                 className="mr-64"

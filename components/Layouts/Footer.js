@@ -6,7 +6,7 @@ import Terms from "../../components/Terms";
 import Facebook from "../../public/assets/Icon/facebook.svg";
 import Instagram from "../../public/assets/Icon/instagram.svg";
 import Twitter from "../../public/assets/Icon/twitter.svg";
-import Logo from "/public/assets/Logo.svg";
+import Logo from "/public/assets/ktmm.svg";
 
 const Footer = () => {
   const [isTermsOpen, setIsTermsOpen] = useState(false);
@@ -27,10 +27,10 @@ const Footer = () => {
     <div className="bg-white-300 pt-44 pb-24">
       <div className="max-w-screen-xl w-full mx-auto px-6 sm:px-8 lg:px-16 grid grid-rows-6 sm:grid-rows-1 grid-flow-row sm:grid-flow-col grid-cols-3 sm:grid-cols-12 gap-4">
         <div className="row-span-2 sm:col-span-4 col-start-1 col-end-4 sm:col-end-5 flex flex-col items-start ">
-          <Image src={Logo} className="h-8 w-auto mb-6" />
+          <Image src={Logo} className="h-4 w-auto mb-4" />
           <p className="mb-4">
-            <strong className="font-medium">Soul Amiga</strong> is a spiritual
-            coaching program that helps you communicate intuitively.
+            <strong className="font-medium">Kaity's Magical Passage</strong> is
+            a spiritual coaching program that helps you communicate intuitively.
           </p>
 
           <div className="flex w-full mt-2 mb-8 -mx-2">
@@ -53,7 +53,7 @@ const Footer = () => {
             </a>
           </div>
           <p className="text-gray-400">
-            ©{new Date().getFullYear()} - Soul Amiga LLC
+            ©{new Date().getFullYear()} - Kaity's Magical Passage LLC
           </p>
         </div>
         <div className=" row-span-2 sm:col-span-2 sm:col-start-7 sm:col-end-9 flex flex-col">

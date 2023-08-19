@@ -1,6 +1,8 @@
+import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { Link as LinkScroll } from "react-scroll";
 import MyDialog from "../MyDialog";
+import Logo from "/public/assets/ktmm.svg";
 
 const Header = () => {
   //state for modal
@@ -22,13 +24,13 @@ const Header = () => {
           (scrollActive ? " shadow-md pt-0" : " pt-4")
         }
       >
-        <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4">
-          <div className="col-start-1 col-end-2 flex">
-            <h1 className="h-8 w-auto text-4xl font-Amatic text-black-500 hover:text-green-500 cursor-pointer">
-              Soul Amiga
-            </h1>
+        <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4 justify-between">
+          <div className="flex">
+            <div className="h-8 w-auto text-4xl font-Lora text-black-500 hover:text-green-500 cursor-pointer">
+              <Image src={Logo} alt="logo" width={72} height={72} />
+            </div>
           </div>
-          <ul className="hidden lg:flex col-start-4 text-xl col-end-6 justify-end text-black-500 items-center">
+          <ul className="hidden lg:flex text-xl justify-end text-black-500 items-center">
             <LinkScroll
               activeClass="active"
               to="home"
@@ -102,7 +104,7 @@ const Header = () => {
               Blog
             </LinkScroll>
           </ul>
-          <div className="col-start-10 font-xl col-end-12 flex justify-end items-center">
+          <div className="flex justify-end items-center">
             <MyDialog />
           </div>
         </nav>
