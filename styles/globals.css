@@ -8,7 +8,7 @@
 @tailwind components;
 
 html {
-  font-family: "Nunito Sans", sans-serif;
+  font-family: "Lora", "Nunito Sans", sans-serif;
 }
 body {
   @apply bg-white-500;
@@ -44,17 +44,29 @@ li.custom-list:before {
   top: -0.35em;
   @apply absolute block;
 }
-li.circle-check:before {
-  background-image: url("/assets/Icon/checklist.svg");
-  left: -0.7em;
-  top: -0.4em;
-}
+
 li.check:before {
   left: -0.5em;
-  background-image: url("/assets/Icon/jam_check.svg");
   top: -0.5em;
   font-size: 400%;
 }
+
+.icon-forest-bath:before {
+  background-image: url("/assets/Icon/forrest.png");
+}
+
+.icon-journaling:before {
+  background-image: url("/assets/Icon/journaling2.png");
+}
+
+.icon-mother-nature:before {
+  background-image: url("/assets/Icon/mother-nature.png");
+}
+
+.icon-meditation:before {
+  background-image: url("/assets/Icon/meditation.png");
+}
+
 /* Slideshow */
 .slick-dots li {
   @apply inline-block;

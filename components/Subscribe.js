@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { useMemo, useRef } from "react";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layouts/ScrollAnimationWrapper";
+import ButtonPrimary from "./misc/ButtonPrimary";
 
 const Subscribe = () => {
   // scroll animation
@@ -31,7 +32,7 @@ const Subscribe = () => {
   };
 
   return (
-    <div>
+    <div className="relative">
       <ScrollAnimationWrapper className="relative w-full mt-16">
         <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
           <div className="absolute rounded-xl py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-white-500">
@@ -40,7 +41,7 @@ const Subscribe = () => {
                 Subscribe to my newsletter
                 <br />{" "}
               </h5>
-              <p>I look foward to ocnnecting with you soon</p>
+              <p>I look foward to connecting with you soon</p>
             </div>
             <div className="flex flex-col justify-end">
               <form onSubmit={subscribeUser} className="flex flex-col">
@@ -75,13 +76,18 @@ const Subscribe = () => {
                       required
                       tabIndex={0}
                       aria-label="Enter email Address"
-                      className="w-54 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 border rounded border-gray-200"
+                      className="w-54 bg-gray-100 text-sm font-medium leading-none text-gray-800 p-3 mb-4 border rounded border-gray-200"
                       defaultValue="Email Address"
                     />
 
-                    <button type="submit" value="" name="subscribe">
-                      Send
-                    </button>
+                    <ButtonPrimary
+                      className="mt-4"
+                      onClick={() => {
+                        console.log("clicked");
+                      }}
+                    >
+                      Subscribe
+                    </ButtonPrimary>
                   </div>
                 </div>
               </form>

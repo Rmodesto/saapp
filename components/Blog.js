@@ -1,45 +1,27 @@
 import React, { useState } from "react";
 
 // import react slick
-import Image from "next/image";
 import Slider from "react-slick";
 import ArrowBack from "./misc/ArrowBack";
 import ArrowNext from "./misc/ArrowNext";
-import Stars from "./misc/Stars";
 
 const Blog = ({
   listBlog = [
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
-      rating: "4.5",
-      blog: "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+      date: "10.17.22",
+      blog: "You are so worthy! By the time others figure out your worth you'll be worth more. You're invaluable your greatest currency is your energy and uniqueness embrace it",
     },
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
-      rating: "4.5",
-      blog: "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+      date: "10.17.22",
+      blog: "You are so worthy! Your worth is not tied to what you can produce. After all you're a human being!!! Thank you for simply existing",
     },
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
-      rating: "4.5",
-      blog: "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+      date: "10.17.22",
+      blog: "There are 8 billion people in the world  yet there is only one YOU with your magic and uniqueness be authentically YOU and have fun doing so. With much love the universe.",
     },
     {
-      name: "iezh Robert",
-      image: "/assets/people-3.png",
-      city: "Warsaw",
-      country: "Poland",
-      rating: "4.5",
-      blog: "Wow... I am very happy to use this VPN, it turned out to be more than my expectations and so far there have been no problems. LaslesVPN always the best",
+      date: "10.17.22",
+      blog: "You are so worthy! By the time others figure out your worth you'll be worth more. You're invaluable your greatest currency is your energy and uniqueness embrace it",
     },
   ],
 }) => {
@@ -90,29 +72,14 @@ const Blog = ({
             <div className="border-2 border-gray-500 hover:border-green-500 transition-all rounded-lg p-8 flex flex-col">
               <div className="flex flex-col xl:flex-row w-full items-stretch xl:items-center">
                 <div className="flex order-2 xl:order-1">
-                  <Image
-                    src={listBlogs.image}
-                    height={50}
-                    width={50}
-                    alt="Icon People"
-                  />
                   <div className="flex flex-col ml-5 text-left">
                     <p className="text-lg text-black-600 capitalize">
-                      {listBlogs.name}
-                    </p>
-                    <p className="text-sm text-black-500 capitalize">
-                      {listBlogs.city},{listBlogs.country}
+                      {listBlogs.date}
                     </p>
                   </div>
                 </div>
-                <div className="flex flex-none items-center ml-auto order-1 xl:order-2">
-                  <p className="text-sm">{listBlogs.rating}</p>
-                  <span className="flex ml-4">
-                    <Stars className="h-4 w-4" />
-                  </span>
-                </div>
               </div>
-              <p className="mt-5 text-left">“{listBlogs.blog}”.</p>
+              <p className="mt-5 text-left">{listBlogs.blog}.</p>
             </div>
           </div>
         ))}

@@ -24,7 +24,7 @@ const Hero = () => {
       id="home"
     >
       <Image
-        src="/assets/Icon/kt1.png"
+        src="/assets/Icon/kthero1.jpg"
         alt="Hero Background"
         layout="fill"
         objectFit="cover"
