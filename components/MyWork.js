@@ -75,9 +75,17 @@ const MyWork = () => {
 
                 <div className="flex flex-col w-1/2 justify-center mb-8 flex-none mt-12">
                   <p className="text-2xl text-black-600 text-center mb-4 "></p>
-                  <ButtonOutline className="w-1/2 mx-auto">
-                    Schedule
-                  </ButtonOutline>{" "}
+
+                  <a
+                    href="https://www.eventbrite.com/e/uptown-girls-hike-summer-series-tickets-648399248607?aff=oddtdtcreator"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <ButtonOutline className="w-1/2 mx-auto">
+                      Schedule
+                    </ButtonOutline>
+                  </a>
+
                   {/* Added w-1/2 and mx-auto to center the button */}
                 </div>
               </motion.div>
@@ -109,13 +117,6 @@ const MyWork = () => {
 
           <Subscribe />
         </div>
-        <Image
-          className="z-40 absolute bottom-0 left-[25%]"
-          src="/assets/Icon/ktsub.png"
-          alt="Subscribe to my newsletter"
-          width={55}
-          height={144}
-        />
       </div>
     </div>
   );

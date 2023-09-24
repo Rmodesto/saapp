@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import Image from "next/image";
 import { useMemo, useRef } from "react";
 import getScrollAnimation from "../utils/getScrollAnimation";
 import ScrollAnimationWrapper from "./Layouts/ScrollAnimationWrapper";
@@ -32,7 +33,7 @@ const Subscribe = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative mb-44">
       <ScrollAnimationWrapper className="relative w-full mt-16">
         <motion.div variants={scrollAnimation} custom={{ duration: 3 }}>
           <div className="absolute rounded-xl py-8 sm:py-14 px-6 sm:px-12 lg:px-16 w-full flex flex-col sm:flex-row justify-between items-center z-10 bg-white-500">
@@ -41,7 +42,14 @@ const Subscribe = () => {
                 Subscribe to my newsletter
                 <br />{" "}
               </h5>
-              <p>I look foward to connecting with you soon</p>
+              <p className="pb-8">I look foward to connecting with you soon</p>
+              <Image
+                className="z-40 absolute bottom-[-44] left-0 object-contain flex justify-center"
+                src="/assets/Icon/ktsub.png"
+                alt="Subscribe to my newsletter"
+                width={144}
+                height={233}
+              />
             </div>
             <div className="flex flex-col justify-end">
               <form onSubmit={subscribeUser} className="flex flex-col">

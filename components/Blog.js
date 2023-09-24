@@ -69,7 +69,7 @@ const Blog = ({
       >
         {listBlog.map((listBlogs, index) => (
           <div className="px-3 flex items-stretch" key={index}>
-            <div className="border-2 border-gray-500 hover:border-green-500 transition-all rounded-lg p-8 flex flex-col">
+            <div className="border-2 border-gray-500 hover:border-green-500 transition-all rounded-lg p-8 flex flex-col flex-grow">
               <div className="flex flex-col xl:flex-row w-full items-stretch xl:items-center">
                 <div className="flex order-2 xl:order-1">
                   <div className="flex flex-col ml-5 text-left">

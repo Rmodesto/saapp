@@ -2,7 +2,7 @@ import Image from "next/image";
 import React, { useEffect, useState } from "react";
 import { Link as LinkScroll } from "react-scroll";
 import MyDialog from "../MyDialog";
-import Logo from "/public/assets/ktmm.svg";
+import Logo from "/public/assets/Icon/ktlogo.png";
 
 const Header = () => {
   //state for modal
@@ -26,8 +26,8 @@ const Header = () => {
       >
         <nav className="max-w-screen-xl px-6 sm:px-8 lg:px-16 mx-auto grid grid-flow-col py-3 sm:py-4 justify-between">
           <div className="flex">
-            <div className="h-8 w-auto text-4xl font-Lora text-black-500 hover:text-green-500 cursor-pointer">
-              <Image src={Logo} alt="logo" width={72} height={72} />
+            <div className="h-8 w-auto text-4xl mb-4 text-black-500 hover:text-green-500 cursor-pointer">
+              <Image src={Logo} alt="logo" width={144} height={62} />
             </div>
           </div>
           <ul className="hidden lg:flex text-xl justify-end text-black-500 items-center">

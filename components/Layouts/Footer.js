@@ -57,7 +57,7 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="row-span-2 sm:col-span-2 sm:col-start-9 sm:col-end-11 flex flex-col mt-16">
+        <div className="row-span-2 sm:col-span-2 sm:col-start-9 sm:col-end-11 flex flex-col mt-16 relative">
           <p className="text-black-600 mb-4 font-medium text-lg">Engage</p>
           <ul className="text-black-500">
             <li
@@ -71,6 +71,7 @@ const Footer = () => {
               About{" "}
             </li>
           </ul>
+          <div>{isFAQsOpen && <FAQs />}</div>
         </div>
         <div className="row-span-2 sm:col-span-2 sm:col-start-11 sm:col-end-13 flex flex-col mt-16">
           <p className="text-black-600 mb-4 font-medium text-lg">Legal</p>
@@ -91,7 +92,6 @@ const Footer = () => {
           </ul>
 
           <div>
-            {isFAQsOpen && <FAQs />}
             {isPrivacyPolicyOpen && <PrivacyPolicy />}
             {isTermsOpen && <Terms />}
           </div>
