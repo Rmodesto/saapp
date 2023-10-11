@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import FAQs from "../../components/FAQs";
 import PrivacyPolicy from "../../components/PrivacyPolicy";
 import Terms from "../../components/Terms";
@@ -11,6 +11,26 @@ const Footer = () => {
   const [isTermsOpen, setIsTermsOpen] = useState(false);
   const [isPrivacyPolicyOpen, setIsPrivacyPolicyOpen] = useState(false);
   const [isFAQsOpen, setIsFAQsOpen] = useState(false);
+
+  const engageRef = useRef(null);
+  const modalRef = useRef(null); // Ref for the FAQs modal
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (
+        isFAQsOpen &&
+        modalRef.current &&
+        !modalRef.current.contains(event.target)
+      ) {
+        setIsFAQsOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isFAQsOpen]);
 
   const handleClick = (type) => {
     if (type === "Terms") {
@@ -25,7 +45,10 @@ const Footer = () => {
   return (
     <div className="bg-white-300 pt-44 pb-24">
       <div className="max-w-screen-xl w-full mx-auto px-6 sm:px-8 lg:px-16 grid grid-rows-6 sm:grid-rows-1 grid-flow-row sm:grid-flow-col grid-cols-3 sm:grid-cols-12 gap-4">
-        <div className="row-span-2 sm:col-span-4 col-start-1 col-end-4 sm:col-end-5 flex flex-col items-start ">
+        <div
+          ref={engageRef}
+          className="row-span-2 sm:col-span-4 col-start-1 col-end-4 sm:col-end-5 flex flex-col items-start "
+        >
           <Image src={Logo} className="h-4 w-auto mb-4" />
           <p className="mb-4">
             <strong className="font-medium">Uptown Girl's Hike</strong>{" "}
@@ -57,22 +80,27 @@ const Footer = () => {
             </li>
           </ul>
         </div>
-        <div className="row-span-2 sm:col-span-2 sm:col-start-9 sm:col-end-11 flex flex-col mt-16 relative">
+
+        <div className="row-span-2 sm:col-span-2 sm:col-start-9 sm:col-end-11 flex flex-col mt-16">
           <p className="text-black-600 mb-4 font-medium text-lg">Engage</p>
-          <ul className="text-black-500">
+          <ul className="text-black-500 flex flex-col space-y-2">
             <li
-              className="my-2 hover:text-green-500 cursor-pointer transition-all"
+              className="hover:text-green-500 cursor-pointer transition-all"
               onClick={() => handleClick("FAQs")}
             >
               FAQs
             </li>
-
-            <li className="my-2 hover:text-green-500 cursor-pointer transition-all">
-              About{" "}
+            <li className="hover:text-green-500 cursor-pointer transition-all">
+              About
             </li>
           </ul>
-          <div>{isFAQsOpen && <FAQs />}</div>
+          {isFAQsOpen && (
+            <div ref={modalRef} className="-mt-12 -ml-6">
+              <FAQs />
+            </div>
+          )}
         </div>
+
         <div className="row-span-2 sm:col-span-2 sm:col-start-11 sm:col-end-13 flex flex-col mt-16">
           <p className="text-black-600 mb-4 font-medium text-lg">Legal</p>
           <ul className="text-black-500">
